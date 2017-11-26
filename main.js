@@ -1,6 +1,15 @@
 'use strict';
 
-var AppView = Backbone.View.extend({
+var app = {};
+
+app.Todo = Backbone.Model.extend({
+  defaults: {
+    title: '',
+    completed: false
+  }
+});
+
+app.AppView = Backbone.View.extend({
   el: '#container',
 
   template: _.template('<h3>hello <%= who %></h3>'),
@@ -15,4 +24,4 @@ var AppView = Backbone.View.extend({
   }
 });
 
-var appView = new AppView();
+var appView = new app.AppView();
